@@ -21,6 +21,7 @@ c. If the compilation was successful, go to the 'deploy and run transactions tab
                 <img src="{{ site.baseurl }}/assets/images/1_sanity_chk.png" alt="remix_ss">
 
   <br />
+d. Expand the loaded contract and click on the welcome button. You will recieve the flag.
   
 `2. SECURE ENCLAVE`  
 The objective of this challenge is to explain how [events and logs][ethereum-logs] work in Ethereum.  
