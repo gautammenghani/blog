@@ -18,7 +18,7 @@ This is an introductory challenge whose objective is to explain how the solidity
 a. Go to [Remix][remix-link]. Replace the 1_Storage.sol file contents with the source code of the challenge.  
 b. In the compiler tab, select the compiler version 0.7.0, and click on compile.  
 c. If the compilation was successful, go to the 'deploy and run transactions tab'. Paste the contract address given in the challenge description and click on 'At address' as shown below.
-                <img src="/assets/images/1_sanity_chk.png" alt="screenshot">
+                <img src="{{ site.baseurl }}/assets/images/1_sanity_chk.png" alt="remix_ss">
 
   <br />
   
