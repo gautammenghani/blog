@@ -19,9 +19,9 @@ a. Go to [Remix][remix-link]. Replace the 1_Storage.sol file contents with the s
 b. In the compiler tab, select the compiler version 0.7.0, and click on compile.  
 c. If the compilation was successful, go to the 'deploy and run transactions tab'. Paste the contract address given in the challenge description and click on 'At address' as shown below.
                 <img src="{{ site.baseurl }}/assets/images/1_sanity_chk.png" alt="remix_ss">
-
+d. Expand the loaded contract and click on the welcome button. You will receive the flag.  
   <br />
-d. Expand the loaded contract and click on the welcome button. You will recieve the flag.
+
   
 `2. SECURE ENCLAVE`  
 The objective of this challenge is to explain how [events and logs][ethereum-logs] work in Ethereum.  
