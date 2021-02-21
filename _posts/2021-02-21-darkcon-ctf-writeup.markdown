@@ -4,7 +4,7 @@ title:  "DarkCon CTF writeup (2021)"
 date:   2021-02-21 15:11:51 +0530
 categories: CTF web
 ---
-This post has writeup for one web challenge: `Easy PHP`
+This post has writeup for one web challenge: `WTF PHP`
 
 This challenge has the local file inclusion (LFI) vulnerability. The solution is as follows:
 1. Use opendir() and readdir() to list the contents of /etc directory.
