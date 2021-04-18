@@ -14,7 +14,7 @@ You can find the source code for Jekyll at GitHub:
 [jekyll][jekyll-organization] /
 [jekyll](https://github.com/jekyll/jekyll) -->
 
-Hi, I am a CTF player and a wannabe security researcher. The purpose of this blog is to document my learnings in the fields of IT security.
+Hi, my name is Gautam Menghani. I am a Software Engineer and a CTF player. My interest areas include Blockchain, system software and IT security. The purpose of this blog is to document my learnings in these areas.
 
 
 
