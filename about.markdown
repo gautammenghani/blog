@@ -14,7 +14,7 @@ You can find the source code for Jekyll at GitHub:
 [jekyll][jekyll-organization] /
 [jekyll](https://github.com/jekyll/jekyll) -->
 
-Hi, I am a Software Engineer and a CTF player. My interest areas include Blockchain, system software and IT security. The purpose of this blog is to document my learnings in these areas.
+Hi, I am a CTF player and wannabe security researcher. My interest areas include IT security and blockchain. The purpose of this blog is to document my learnings in these areas.
 
 
 
