@@ -14,7 +14,7 @@ You can find the source code for Jekyll at GitHub:
 [jekyll][jekyll-organization] /
 [jekyll](https://github.com/jekyll/jekyll) -->
 
-Hi, I am a software engineer and a CTF player. I am interested in computers and math.
+Hi, I am a software engineer working on solving real problems. My primary areas of interest are systems, HPC, backend development, security, and math.
 
 
 
