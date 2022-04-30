@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Using semaphores and mutex locks in linux"
+title:  "Using semaphores and mutex locks in C"
 date:   2022-04-21 11:11:51 +0530
-categories: linux
+categories: linux, C
 ---
 <style type="text/css">
   img {
