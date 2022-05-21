@@ -16,6 +16,7 @@ In this post, I will explain how we can defeat a random number generator that is
 1. We are given two files - a python source file and log.txt (output from the script when the script was run).
 2. The python file is as follows:
 
+{%raw%}
 ```python
 #!/usr/bin/env python3
 import sys
@@ -38,7 +39,7 @@ def main():
 
         if 'b9ff3ebf' in flag:
             with open("./flag", "w") as f:
-                f.write(f"dam{{{flag}}}")
+                f.write(f"dam{flag}")
             f.close()
             break
 
@@ -48,6 +49,7 @@ def main():
 if __name__ == "__main__":
    sys.exit(main()) 
 ```
+{%endraw%}
 
 <h4><u>Solution</u></h4>
 1. In the above code, the random number generator is initialized with time.time(), which returns the seconds since the UNIX epoch. After that, a random number is generated and hashed.
@@ -55,6 +57,7 @@ if __name__ == "__main__":
 3. Since the number of seconds since UNIX epoch is finite, we can brute force the random number generator by trying out all the possible seconds, until we get out flag.
 4. Solution script :
 
+{%raw%}
 ```python
 #!/usr/bin/env python3
 import sys
@@ -78,7 +81,7 @@ def main():
 
         if 'b9ff3ebf' in flag:
             with open("./flag", "w") as f:
-                f.write(f"dam{{{flag}}}")
+                f.write(f"dam{flag}")
             f.close()
             break
 
@@ -88,5 +91,6 @@ def main():
 if __name__ == "__main__":
    sys.exit(main())
 ```
+{%endraw%}
 Flag : dam{f6f73f022249b67e0ff840c8635d95812bbb5437170464863eda8ba2b9ff3ebf}
 
