@@ -10,7 +10,7 @@ categories: linux, C
     display: block;
   }
 </style>
-In this post, we will learn how to use [Clang's static analyzer](https://clang-analyzer.llvm.org/), scan-build, to find and fix bugs in the Linux kernel.
+In this post, we will learn how to use scan-build, i.e,  Clang's static analyzer to find and fix bugs in the Linux kernel.
 
 <h4><u>Installing the necessary tools</u></h4>
 We need two packages to be able to use scan-build - clang and clang-tools. Note that clang's version should be 11 and above.
