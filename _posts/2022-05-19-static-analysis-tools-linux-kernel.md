@@ -122,6 +122,6 @@ As mentioned before, read the code to make sure the warnings reported are not fa
 <h4><u>References and further reading</u></h4>
 1. [clang scan docs](https://clang-analyzer.llvm.org/scan-build.html)
 2. [GCC's fanalyzer flag](https://developers.redhat.com/blog/2020/03/26/static-analysis-in-gcc-10)
-3. [Smatch LWN article] (https://lwn.net/Articles/691882/)
+3. [Smatch LWN article](https://lwn.net/Articles/691882/)
 4. [Coccinell docs](https://www.kernel.org/doc/html/v4.15/dev-tools/coccinelle.html)
 5. [Sparse's LWN article](https://lwn.net/Articles/689907/)
