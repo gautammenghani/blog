@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Gather trace events in linux kernel"
-date:   2022-05-19 11:11:51 +0530
+date:   2022-07-31 11:11:51 +0530
 categories: linux, C
 ---
 <style type="text/css">
