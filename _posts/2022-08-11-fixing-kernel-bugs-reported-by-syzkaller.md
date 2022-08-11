@@ -49,7 +49,7 @@ Let us start with the line at which the bug occurs.
       return -EBUSY;
   }
 ```
-The hcpriv field of the USB request blog is not NULL, and this causes the warning that the URB was active while submitting. Good start, let's read the functions in the backtrace.
+The hcpriv field of the USB request block is not NULL, and this causes the warning that the URB was active while submitting. Good start, let's read the functions in the backtrace.
 
 Let's look at the code that called this function - send_packet(ictx)
 ```c
