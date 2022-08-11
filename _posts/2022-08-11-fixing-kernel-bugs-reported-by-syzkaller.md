@@ -59,7 +59,7 @@ Let's look at the code that called this function - send_packet(ictx)
 
 	retval = usb_submit_urb(ictx->tx_urb, GFP_KERNEL);
 ```
-So before calling usb_submit_urb(), we set the imon_context->tx.busy to true to indicate that a write is in progress. Now let's look at the fields of the strict imon_context
+So before calling usb_submit_urb(), we set the imon_context->tx.busy to true to indicate that a write is in progress. Now let's look at the fields of the struct imon_context
 ```c
 struct imon_context {
 	struct device *dev;
