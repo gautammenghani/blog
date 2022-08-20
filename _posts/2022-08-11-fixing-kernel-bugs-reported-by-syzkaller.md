@@ -131,6 +131,8 @@ static int send_packet(struct imon_context *ictx)
 ```
 With this fix in place, the reproducer no longer triggers a problem.
 
+NOTE : This bug is not yet fixed, so if there are any changes in the final fix, I will update this blog post.
+
 <br>
 <h4><b><u>General tricks when working on syzkaller bugs</u></b></h4>
 It is helpful to get a reproducer that can trigger the bug reliably as evident in the above example. Next, try to find out if the bug is a race condition. This can be done either with the reproducer code, or using the -smp flag in QEMU command line. Finally, try to use different tools like ftrace, kgdb, etc. depending on the nature of the bug.
