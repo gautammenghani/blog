@@ -4,12 +4,6 @@ title:  "Linux kernel mentorship experience - summer 2022"
 date:   2022-08-24 00:01:51 +0530
 categories: linux, C
 ---
-<style type="text/css">
-  img {
-    padding: 5px;
-    display: block;
-  }
-</style>
 
 Around the start of May 2022, I was browsing through the mentorships on the linux foundation site, and I came across the Linux kernel bug fixing mentorship summer 2022. I had just decided to learn more about the linux kernel, so this was a great chance to proceed ahead on my goal. I applied to the program and was selected after the initial screening round. I will share my experience of being a part of the 3 month program. 
 
