@@ -97,7 +97,6 @@ On running the module with invalid capability, I got an error in dmesg instead o
 #include <linux/kernel.h>
 #include <linux/livepatch.h>
 
-#include <linux/seq_file.h>
 static bool livepatch_capable(int cap)
 {
         pr_debug("Livepatched version of capable()");
@@ -117,7 +116,7 @@ static struct klp_func funcs[] = {
 
 static struct klp_object objs[] = {
         {
-                /* name being NULL means vmlinux */
+                // name being NULL means vmlinux 
                 .funcs = funcs,
         }, { }
 };
