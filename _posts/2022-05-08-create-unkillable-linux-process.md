@@ -10,7 +10,7 @@ categories: linux, C
     display: block;
   }
 </style>
-In this post, we will learn how to make an userspace process unkillable. We will create a simple character device driver which accepts the pid (process id) of a process and makes it unkillable. The source code for this can be found on [my github](https://github.com/gautammenghani/upas)
+In this post, we will learn how to make an userspace process unkillable. We will create a simple character device driver which accepts the pid (process id) of a process and makes it unkillable. The source code for this can be found on [my github](https://github.com/gautammenghani/upas).
 
 <h4><u>Why make an unkillable process?</u></h4>
 Sometimes, we may be writing a critical program that has to complete its tasks successfully and a failure to do so may be catastrophic for the system. For example, the init process in linux cannot be in a situation where a user accidently kills it.
