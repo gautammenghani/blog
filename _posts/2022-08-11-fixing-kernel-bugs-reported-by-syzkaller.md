@@ -115,23 +115,41 @@ And here it is
 [   65.381785][ T6395] URB ffff8881064ce900 submitted while active
 [   65.382521][ T6395] WARNING: CPU: 0 PID: 6395 at drivers/usb/core/urb.c:378 usb_submit_urb+0x14bd/0x1870
 ```
-So the warning happens when send_packet() is called when a write is already in progress. The fix for this is easy enough:
+So the warning happens when send_packet() is called when a write is already in progress. This indicates that only one write should be in progress at a time. Also, all the calls to send_packet() are protected with a mutex lock, so it looks like this is a race condition as otherwise send_packet() should not be callable in a race. To identify which function is calling send_packet() twice, I used a gcc builtin :
 
 ```c
 static int send_packet(struct imon_context *ictx)
 {
-	unsigned int pipe;
-	unsigned long timeout;
-	int interval = 0;
-	int retval = 0;
-	struct usb_ctrlrequest *control_req = NULL;
+	.
+	.
+	.
+	printf ("Caller name: %pS\n", __builtin_return_address(0));
+	.
+	.
+```
 
-	if (ictx->tx.busy)
-	    return -EBUSY;
+With this trick, I understood that the function vfd_write() is calling send_packet() once, then before the URB processing finishes, it calls send_packet() again. This means that the lock is being released somewhere as vfd_write() acquires the mutex lock before calling send_packet(). Upon close inspection of the send_packet() function, we can see that when it waits for packet transmission to complete, it releases the mutex_lock and then calls wait_for_completion_interruptible(). This is it! While send_packet() waits for one transmission to complete, the vfd_write() function acquires the lock and calls send_packet() again. We can fix this by removing the lock:
+
+```c
+func send_packet()
+{
+    // do work
+    call usb_submit_urb()
+    mutex_unlock()		--> remove this unlock
+    wait_for_event_interruptible() 
+    mutex_lock()			--> remove this lock
+}
+
+func vfd_write()
+{
+    mutex_lock()
+    call send_packet() 
+    mutex_unlock()
+}
 ```
 With this fix in place, the reproducer no longer triggers a problem.
 
-NOTE : This bug is not yet fixed, so if there are any changes in the final fix, I will update this blog post.
+The commit in the kernel can be found [here](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=813ceef062b53d68f296aa3cb944b21a091fabdb)
 
 <br>
 <h4><b><u>General tricks when working on syzkaller bugs</u></b></h4>
